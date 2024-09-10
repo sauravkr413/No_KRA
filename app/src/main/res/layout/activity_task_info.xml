@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewTimeSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="yyyy-MM-dd HH:mm:ss"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextTaskInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTimeSlot"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:hint="Enter your activity"/>
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextTaskInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Submit"/>
+</RelativeLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="16dp">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewTimeSlot"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Enter your password:"-->
+<!--        android:textSize="18sp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTaskInfo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Password"-->
+<!--        android:inputType="textPassword" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonSubmit"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Submit" />-->
+<!--</LinearLayout>-->
