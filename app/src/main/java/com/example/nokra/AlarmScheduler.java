@@ -22,24 +22,24 @@ public class AlarmScheduler {
         // Schedule alarms for every hour between 9 AM and 5 PM
         Calendar calendar = Calendar.getInstance();
 
-        for (int hour = 5; hour <= 22; hour++) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                pendingIntent = PendingIntent.getBroadcast(context, hour, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-            } else {
-                pendingIntent = PendingIntent.getBroadcast(context, hour, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            }
-
-            calendar.set(Calendar.HOUR_OF_DAY, hour);
-            calendar.set(Calendar.MINUTE, 46);
-            calendar.set(Calendar.SECOND, 0);
-
-            long triggerTime = calendar.getTimeInMillis();
-            if (System.currentTimeMillis() > triggerTime) {
-                triggerTime += AlarmManager.INTERVAL_DAY;
-            }
-
-            alarmManager.setExact(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
-            Log.d("Test", "scheduleAlarms: " + hour);
+        int hour = 16;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getBroadcast(context, hour, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        } else {
+            pendingIntent = PendingIntent.getBroadcast(context, hour, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
+
+        calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+
+        long triggerTime = calendar.getTimeInMillis();
+        if (System.currentTimeMillis() > triggerTime) {
+            triggerTime += AlarmManager.INTERVAL_DAY;
+        }
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, triggerTime, pendingIntent);
+        Log.d("Test", "scheduleAlarms: " + hour);
+
     }
 }
